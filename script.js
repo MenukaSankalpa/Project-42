@@ -11,8 +11,10 @@ form.onsubmit = (e)=>{
     xhr.onload = ()=>{
         if(xhr.readyState == 4 && xhr.status == 200){
             let response = xhr.response;
+            console.log(response);
         }
     }
-    xhr.send()
+    let formData = new FormData(form);
+    xhr.send(formData);
 }
 
